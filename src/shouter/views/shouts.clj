@@ -13,13 +13,22 @@
             (text-area "shout")
             (submit-button "shout!"))])
 
+(defn id-string [shout]
+  (str (:id shout)))
+
+(defn hider-form [shout]
+  (form-to [:post "/hide"]
+           (hidden-field "shout" (:id shout))
+           (submit-button "hide")))
+
 (defn display-shouts[shouts]
   [:div {:id "shouts sixteen columns alpha omega" }
    [:table
      (map
        (fn [shout] [:tr
                     [:td {:class "shout"} (h (:content shout))]
-                    [:td {:class "shout-timestamp"} (h (:created_at shout))]])
+                    [:td {:class "shout-timestamp"} (h (:created_at shout))]
+                    [:td {:class "hide-link"} (hider-form shout)]])
        shouts)]])
 
 (defn index [shouts]

@@ -6,7 +6,7 @@
             [shouter.models.shout :as model]))
 
 (defn index []
-  (view/index (model/all)))
+  (view/index (model/visible)))
 
 (defn create [params]
   (let [shout (:shout params)]
@@ -15,8 +15,14 @@
       (model/create shout)))
   (ring/redirect "/"))
 
+(defn hide [params]
+  (let [id (:shout params)]
+    (model/hide id))
+  (ring/redirect "/"))
+
 (defroutes routes
            (GET "/" [] (index))
-           (POST "/" {params :params} (create params)))
+           (POST "/" {params :params} (create params))
+           (POST "/hide" {params :params} (hide params)))
 
 
