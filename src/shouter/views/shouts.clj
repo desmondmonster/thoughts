@@ -1,7 +1,9 @@
 (ns shouter.views.shouts
   (:use [hiccup.core :only [html h]]
-        [hiccup.page-helpers :only [doctype]]
-        [hiccup.form-helpers :only [form-to label text-area submit-button]])
+        [hiccup.page :only [doctype]]
+        [hiccup.form :only [form-to label text-area hidden-field submit-button]]
+        [hiccup.element :only [link-to]]
+        [clojure.string :only (join)])
   (:require [shouter.views.layout :as layout]))
 
 (defn shout-form []

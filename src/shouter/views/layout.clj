@@ -1,6 +1,6 @@
 (ns shouter.views.layout
   (:use [hiccup.core :only [html]]
-        [hiccup.page-helpers :only [doctype include-css]]))
+        [hiccup.page :only [doctype include-css]]))
 
 (defn common [title & body]
   (html
