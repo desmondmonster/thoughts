@@ -13,9 +13,6 @@
             (text-area "shout")
             (submit-button "shout!"))])
 
-(defn id-string [shout]
-  (str (:id shout)))
-
 (defn hider-form [shout]
   (form-to [:post "/hide"]
            (hidden-field "shout" (:id shout))
