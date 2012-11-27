@@ -11,13 +11,11 @@
       [:meta {:name "viewport" :content "width=device-width, initial-scale=1, maximum-scale=1"}]
       [:title title]
 
-      (include-css "/stylesheets/base.css"
-                   "/stylesheets/skeleton.css"
-                   "/stylesheets/screen.css")
+      (include-css "/stylesheets/notes.css")
       (include-css "http://fonts.googleapis.com/css?family=Sigmar+One&v1")]
    [:body
     [:div {:id "header"}
-     [:h1 {:class "container"} "SHOUTER"]]
+     [:h1 {:class "container"} "notes"]]
     [:div {:id "content" :class "container"} body]]))
 
 (defn four-oh-four []

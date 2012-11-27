@@ -7,25 +7,25 @@
   (:require [shouter.views.layout :as layout]))
 
 (defn shout-form []
-  [:div {:id "shout-form" :class "sixteen columns alpha omega" }
+  [:div {:id "shout-form"}
    (form-to [:post "/"]
             (label "shout" "What do you want to shout?")
             (text-area "shout")
             (submit-button "shout!"))])
 
-(defn hider-form [shout]
+(defn hider [shout]
   (form-to [:post "/hide"]
            (hidden-field "shout" (:id shout))
            (submit-button "hide")))
 
 (defn display-shouts[shouts]
-  [:div {:id "shouts sixteen columns alpha omega" }
+  [:div {:id "shouts" }
    [:table
      (map
        (fn [shout] [:tr
                     [:td {:class "shout"} (h (:content shout))]
                     [:td {:class "shout-timestamp"} (h (:created_at shout))]
-                    [:td {:class "hide-link"} (hider-form shout)]])
+                    [:td {:class "hide-link"} (hider shout)]])
        shouts)]])
 
 (defn index [shouts]
