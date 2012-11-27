@@ -8,7 +8,7 @@
 
 (defn shout-form []
   [:div {:id "shout-form"}
-   (form-to [:post "/"]
+   (form-to [:post "/create"]
             (label "shout" "What do you want to shout?")
             (text-area "shout")
             (submit-button "shout!"))])
@@ -29,7 +29,10 @@
        shouts)]])
 
 (defn index [shouts]
-  (layout/common "SHOUTER"
-                 (shout-form)
+  (layout/common "list of notes"
                  [:div {:class "clear"}]
                  (display-shouts shouts)))
+
+(defn new-note []
+  (layout/common "add something"
+                 (shout-form)))

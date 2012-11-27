@@ -35,5 +35,5 @@
 
 (defn create [shout]
   (sql/with-connection db
-    (sql/insert-values :notes [:content :created_at :updated_at] [shout now now])))
+    (sql/insert-values :notes [:content :created_at :updated_at] [shout (now) (now)])))
 

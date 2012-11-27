@@ -8,6 +8,9 @@
 (defn index []
   (view/index (model/visible)))
 
+(defn new-note []
+  (view/new-note))
+
 (defn create [params]
   (let [shout (:shout params)]
     (when-not (str/blank? shout)
@@ -22,7 +25,9 @@
 
 (defroutes routes
            (GET "/" [] (index))
-           (POST "/" {params :params} (create params))
+           (GET "/notes" [] (index))
+           (GET "/n" [] (new-note))
+           (POST "/create" {params :params} (create params))
            (POST "/hide" {params :params} (hide params)))
 
 

@@ -15,8 +15,7 @@
       (include-css "http://fonts.googleapis.com/css?family=Sigmar+One&v1")]
       (include-css "http://fonts.googleapis.com/css?family=Cardo")
    [:body
-    [:div {:id "header"}
-     [:h1 {:class "container"} "notes"]]
+    [:div {:id "header"}]
     [:div {:id "content" :class "container"} body]]))
 
 (defn four-oh-four []
