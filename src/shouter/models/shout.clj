@@ -34,6 +34,7 @@
   (update-note id {:hidden true}))
 
 (defn create [shout]
-  (sql/with-connection db
-    (sql/insert-values :notes [:content :created_at :updated_at] [shout (now) (now)])))
+  (let [obj {:content shout :created_at (now) :updated_at (now)}]
+    (sql/with-connection db
+      (sql/insert-values :notes (keys obj) (vals obj)))))
 
