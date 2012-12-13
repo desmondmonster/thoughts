@@ -2,8 +2,8 @@
   (:require [clojure.java.jdbc :as sql]))
 
 (def db {:subprotocol "postgresql"
-                  :subname "//localhost:5432/notes_app_development"
-                  :user (System/getenv "NOTES_APP_USER")})
+         :subname "//localhost:5432/notes_app_development"
+         :user (System/getenv "NOTES_APP_USER")})
 
 (defn now []
   (java.sql.Timestamp. (.getTime (java.util.Date.))))
