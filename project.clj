@@ -1,4 +1,4 @@
-(defproject shouter "0.0.1"
+(defproject thoughts "0.0.1"
   :description "Notes app"
   :dependencies [[org.clojure/clojure "1.3.0"]
                  [postgresql/postgresql "8.4-702.jdbc4"]

@@ -1,5 +1,5 @@
-(ns shouter.test.core
-  (:use [shouter.core])
+(ns thoughts.test.core
+  (:use [thoughts.core])
   (:use [clojure.test]))
 
 (deftest replace-me ;; FIXME: write
